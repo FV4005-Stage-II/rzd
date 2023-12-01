@@ -1,6 +1,5 @@
 .search-results {
-    display: flex;
-    flex-direction: column;
+   
     align-items: center;
   }
 
@@ -15,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     width: 50%;
+    margin-top: 25px;
   }
   
   .departure-info,
