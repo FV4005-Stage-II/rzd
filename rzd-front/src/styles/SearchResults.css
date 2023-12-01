@@ -1,0 +1,69 @@
+.search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .result-item {
+    display: flex;
+    justify-content: space-between;
+    border: 5px solid #0073e6;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin:auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+  }
+  
+  .departure-info,
+  .arrival-info {
+    width: 35%;
+    padding: 0 10px;
+  }
+  .departure-info {
+    text-align: left;
+    font-family: Arial, sans-serif; 
+  }
+  
+  .arrival-info {
+    text-align: right;
+    font-family: Arial, sans-serif; 
+  }
+  
+  .time-info {
+    font-size: 2.5em; 
+    background-color: #ffffff;
+    padding: 5px; 
+  }
+  .city {
+    font-size: 1.2em;
+    font-family: Arial, sans-serif; 
+  }
+  
+  .info {
+    font-size: 0.9em; 
+    font-family: Arial, sans-serif; 
+  }
+
+  .additional-info {
+    width: 30%;
+    padding: 30px 0px 0px 20px;
+    border-left: 5px dotted #0073e6;
+    font-size: 1.3em; 
+    font-family: Arial, sans-serif;
+  }
+  .additional-info a {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+ 
+  .additional-info:hover {
+    background-color: #f0f0f0;
+    cursor: pointer; 
+  }
+  p{
+    margin:  10px;
+  }

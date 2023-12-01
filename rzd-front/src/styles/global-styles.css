@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-admin-panel {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+}
+.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#A9AEBA;}
+.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#E2E4E7;stroke:#D2D7DB;stroke-miterlimit:22.9256;}
+.st3{opacity:0.25;filter:url(#AI_Тень_1_справа);}
+.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#E2E4E7;}
+.st5{fill:none;stroke:#D2D7DB;stroke-miterlimit:22.9256;}
+.st6{opacity:0.25;filter:url(#AI_Тень_1_слева);}
+.st7{opacity:0.25;filter:url(#AI_Тень_1_сверху);}
+.st8{fill:#FFFFFF;}
+.st9{font-family:'Roboto','Helvetica Neue',sans-serif;}
+.st10{font-size:20px;}
+.st11{fill-rule:evenodd;clip-rule:evenodd;fill:#CBCED3;}
+.st12{fill-rule:evenodd;clip-rule:evenodd;fill:#868D98;}
+.st13{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#BBDDFF;stroke-width:4;stroke-miterlimit:22.9256;}

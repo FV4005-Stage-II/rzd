@@ -1,0 +1,23 @@
+/* HeaderStyle.css */
+
+/* Стиль для обертки заголовка (header) */
+.header {
+  background-color: #0073e6; /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  padding: 20px; /* Внутренние отступы */
+  display: flex;
+  align-items: center;
+}
+
+/* Стиль для логотипа */
+.logo {
+  width: 50px; /* Ширина логотипа */
+  height: 50px; /* Высота логотипа */
+  margin-right: 10px; /* Отступ справа */
+}
+
+/* Стиль для заголовка */
+.title {
+  font-size: 24px; /* Размер шрифта заголовка */
+  font-weight: bold; /* Жирный шрифт */
+}
