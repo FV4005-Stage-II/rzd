@@ -24,7 +24,7 @@ public class RouteAdminController {
 
     @DeleteMapping("/delete-route")
     @ResponseBody
-    public ResponseEntity<?> addRoute(@RequestParam Long id) {
+    public ResponseEntity<?> deleteRoute(@RequestParam Long id) {
         adminRouteService.deleteRoute(id);
         return ResponseEntity.ok(HttpStatus.OK);
     }
