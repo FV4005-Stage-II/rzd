@@ -9,6 +9,7 @@ import com.example.rzd.entity.Waggon;
 import com.example.rzd.repository.PlaceRepository;
 import com.example.rzd.repository.RouteRepository;
 import com.example.rzd.repository.WaggonRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,13 +19,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class AdminRouteService {
-    @Autowired
-    RouteRepository routeRepository;
-    @Autowired
-    WaggonRepository waggonRepository;
-    @Autowired
-    PlaceRepository placeRepository;
+
+
+    private final RouteRepository routeRepository;
+
+    private final WaggonRepository waggonRepository;
+
+    private final PlaceRepository placeRepository;
 
     @Transactional // переписать на ФАБРИКУ для создания купе, электричек и тд
     public Route saveRoute(RouteDto routeDto) {
@@ -58,7 +61,7 @@ public class AdminRouteService {
         return route;
     }
 
-    @Transactional // переписать на ФАБРИКУ для создания купе, электричек и тд
+
     public void deleteRoute(Long id) {
         routeRepository.deleteById(id);
     }

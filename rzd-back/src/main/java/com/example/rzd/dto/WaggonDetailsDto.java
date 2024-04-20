@@ -10,5 +10,5 @@ import java.util.List;
 @Setter
 @Getter
 public class WaggonDetailsDto {
-    List<Pair<String, List<Place>>> waggonsWithPlaces;
+    private List<Pair<String, List<Place>>> waggonsWithPlaces;
 }

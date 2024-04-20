@@ -1,14 +1,12 @@
 package com.example.rzd.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.List;
 
 
 
-@Getter
-@Setter
+@Data
 public class ReservationSeatsDto {
     private String waggonName;
     private List<Integer> selectedSeats;

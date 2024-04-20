@@ -12,5 +12,5 @@ import java.util.Optional;
 public interface RouteRepository extends JpaRepository<Route, Long> {
     List<Route> findByWhenceAndVhereAndDepartureDate(String whence, String vhere, LocalDate departureDate);
     Route findByWhenceAndVhereAndDepartureDateAndDepartureTime(String whence, String vhere, LocalDate departureDate, LocalTime departureTime);
-    //Route findById(long id);
+
 }

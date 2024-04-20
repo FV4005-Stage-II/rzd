@@ -9,6 +9,6 @@ import java.util.List;
 @Getter
 @Setter
 public class SeatsRequestBodyDto {
-    Long route_id;
-    List<ReservationSeatsDto> reservationSeatsDtos;
+    private Long route_id;
+    private List<ReservationSeatsDto> reservationSeatsDtos;
 }

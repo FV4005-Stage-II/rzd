@@ -11,6 +11,7 @@ import com.example.rzd.repository.PlaceRepository;
 import com.example.rzd.repository.RouteRepository;
 import com.example.rzd.repository.TrainRepository;
 import com.example.rzd.repository.WaggonRepository;
+import lombok.AllArgsConstructor;
 import org.antlr.v4.runtime.misc.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,19 +23,18 @@ import java.util.List;
 
 
 @Service
+@AllArgsConstructor
 public class MainRzdService {
-    @Autowired
-    RouteRepository routeRepository;
-    @Autowired
-    TrainRepository trainRepository;
-    @Autowired
-    WaggonRepository waggonRepository;
-    @Autowired
-    PlaceRepository placeRepository;
+
+    private final RouteRepository routeRepository;
 
 
 
-    @Transactional
+    private final PlaceRepository placeRepository;
+
+
+
+
     public List<RouteDetailsDTO> getAllDetailsRouteDay(String whence, String vhere, LocalDate departureDate) {
         List<RouteDetailsDTO> trainDetailsDTOs = new ArrayList<>();
         for (Route route : routeRepository.findByWhenceAndVhereAndDepartureDate(whence, vhere, departureDate)) {
@@ -65,7 +65,6 @@ public class MainRzdService {
         return trainDetailsDTOs;
     }
 
-    @Transactional
     public WaggonDetailsDto getDetailsAvailableSeats(Long id) { // exception not find must add
         Train train = routeRepository.findById(id).get().getTrain();
         WaggonDetailsDto waggonDetailsDto = new WaggonDetailsDto();
@@ -82,37 +81,6 @@ public class MainRzdService {
         for (ReservationSeatsDto seats : reservationSeatsDtos.getReservationSeatsDtos())
             for (Integer seat : seats.getSelectedSeats())
                 placeRepository.updatePlacesOfOccupied(reservationSeatsDtos.getRoute_id(), seats.getWaggonName(), Integer.toString(seat + 1));
-
-
-//        for (ReservationSeatsDto reservation : reservationSeatsDtos) {
-//            String waggonName = reservation.getWaggonName();
-//            List<Integer> selectedSeats = reservation.getSelectedSeats();
-//            System.out.println("Вагон " + (Integer.parseInt(waggonName)) );
-//            for (Integer i : selectedSeats)
-//                System.out.println(i);
-//        }
-//
-//        System.out.println();
-//select route.id,place.id,place.occupied,place.waggon_id from place join waggon on waggon.id=place.waggon_id join train on train.id = waggon.train_id join route on route.id=train.route_id where route.id = 5;
-//        UPDATE table1
-//        SET column_to_update = 'новое_значение'
-//        FROM table2
-//        WHERE table1.common_id = table2.common_id
-//        AND table2.some_condition = 'некоторое_условие';
-//
-//
-//
-//        UPDATE table1
-//        SET column_to_update = 'новое_значение'
-//        FROM table2, table3, table4
-//        WHERE table1.common_id = table2.common_id
-//        AND table2.some_condition = 'некоторое_условие'
-//        AND table1.common_id = table3.common_id
-//        AND table3.another_condition = 'другое_условие'
-//        AND table1.common_id = table4.common_id
-//        AND table4.yet_another_condition = 'еще_одно_условие';
-
-//        update place set occupied = false from route, train, waggon where route.id=5 and waggon.number_waggon = '1' and place.number_place = '1' and waggon.id=place.waggon_id and train.id = waggon.train_id and route.id=train.route_id;
     }
 
 }
